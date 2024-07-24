@@ -8,13 +8,13 @@ import { getAuthApiHeaders } from '@helpers/getAuthApiHeaders';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
-import Request from './Request';
+import RequestFields from './Request';
 
 interface SnapshotProps {
   id: string;
 }
 
-const Poll: FC<SnapshotProps> = ({ id }) => {
+const Request: FC<SnapshotProps> = ({ id }) => {
   const getRequest = async (): Promise<null | TRequest> => {
     try {
       const response = await axios.get(`${GOOD_API_URL}/requests/get`, {
@@ -49,7 +49,7 @@ const Poll: FC<SnapshotProps> = ({ id }) => {
     return null;
   }
 
-  return <Request request={data} refetch={refetch} />;
+  return <RequestFields refetch={refetch} request={data} />;
 };
 
-export default Poll;
+export default Request;
