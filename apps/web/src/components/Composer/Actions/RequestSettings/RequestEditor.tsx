@@ -18,7 +18,7 @@ const RequestEditor: FC = () => {
   // const [showPollLengthModal, setShowPollLengthModal] = useState(false);
 
   return (
-    <Card className="m-5 px-8 py-6" forceRounded>
+    <Card className="m-5 px-5 py-3" forceRounded>
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center space-x-2 text-sm">
           {/* <ClockIcon className="size-4" /> */}

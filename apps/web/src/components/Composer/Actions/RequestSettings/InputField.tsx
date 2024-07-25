@@ -47,15 +47,17 @@ export const InputField: FC<InputFieldProps> = ({
 
   return (
     <div className="space-y-2">
-      <label className="block text-sm font-medium text-gray-700">
+      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
         {label}
         {isRequired && <span className="text-red-500"> *</span>}
       </label>
       {type === 'text' ? (
         <input
-          className={`block w-full rounded-md border ${
-            errorMessage ? 'border-red-500' : 'border-gray-300'
-          } px-3 py-2 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm`}
+          className={`block w-full rounded-xl border ${
+            errorMessage
+              ? 'border-red-500'
+              : 'border-gray-300 dark:border-gray-700'
+          } bg-white px-3 py-2 focus-within:border-gray-500 focus-within:ring-1 focus-within:ring-gray-400 sm:text-sm dark:bg-gray-900`}
           name={name}
           onChange={onChange}
           placeholder={placeholder}
@@ -64,9 +66,11 @@ export const InputField: FC<InputFieldProps> = ({
         />
       ) : (
         <textarea
-          className={`block w-full rounded-md border ${
-            errorMessage ? 'border-red-500' : 'border-gray-300'
-          } px-3 py-2 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm`}
+          className={`block w-full rounded-xl border ${
+            errorMessage
+              ? 'border-red-500'
+              : 'border-gray-300 dark:border-gray-700'
+          } bg-white px-3 py-2 focus-within:border-gray-500 focus-within:ring-1 focus-within:ring-gray-400 sm:text-sm dark:bg-gray-900`}
           name={name}
           onChange={onChange}
           placeholder={placeholder}
